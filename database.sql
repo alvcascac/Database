@@ -1,6 +1,8 @@
 DROP DATABASE IF exists assignment1;
 CREATE DATABASE IF NOT EXISTS assignment1;
 USE assignment1;
+
+
 create table Company(
     NIF CHAR(9) not null,
     name CHAR(15) not null,
@@ -8,14 +10,6 @@ create table Company(
     email CHAR(25),
     primary key(NIF)
     );
-    
-create table Route(
-    id_route integer not null,
-    category CHAR(20) not null check (category in('Prebenjamin','Benjamin','Alevín','Infantil','Cadete','Juvenil',
-    'Junior','Promesa', 'Senior','Veteranos A','Veteranos B','Veteranos C')) ,
-    distance integer,
-    price integer,
-    primary key(id_route)); 
 
 create table Running(
     id_running integer not null,
@@ -23,9 +17,17 @@ create table Running(
     dateRunning date,
     gender CHAR(10) default 'mixed' check (gender in('male','female','mixed')) ,
     location CHAR(40),
+    primary key(id_running)
+    );
+    
+create table Route(
     id_route integer not null,
-    primary key(id_running),
-    foreign key (id_route) references Route(id_route)
+    category CHAR(20) not null check (category in('Children','Youth','Adult','Senior')) ,
+    distance integer,
+    price integer,
+    id_running integer not null,
+    primary key(id_route),
+    foreign key (id_running) references Running(id_running)
     );
     
 create table Sponsors(
@@ -50,14 +52,13 @@ create table Competitor(
     );
 
 create table Participation(
-    id_participation integer not null,
+    dni CHAR(9) not null,
+    id_running integer not null,
     posicion integer,
     tiempo TIMESTAMP, 
-    id_running integer not null,
-    dni CHAR(9) not null,
     category CHAR(20) not null check (category in('Prebenjamin','Benjamin','Alevín','Infantil','Cadete','Juvenil',
     'Junior','Promesa', 'Senior','Veteranos A','Veteranos B','Veteranos C')) ,
-    primary key(id_participation),
+    primary key(dni, id_running),
     foreign key (id_running) references running(id_running),
     foreign key (dni) references competitor(dni)
     );
