@@ -45,21 +45,20 @@ create table Competitor(
     phone CHAR(50) not null,
     email CHAR(50),
     address CHAR(50),
-    nacionality CHAR(50),
+    nationality CHAR(50),
     gender CHAR(10) not null check (gender in ('male', 'female')) ,
     birthday date not null,
     primary key(dni)
     );
 
 create table Participation(
-    id_participation integer not null,
-    posicion integer,
-    tiempo time, 
     id_running integer not null,
     dni CHAR(9) not null,
+    position integer,
+    time time, 
     category CHAR(30) not null check (category in('Prebenjamin','Benjamin','Alevín','childish','Cadet','Youth',
 	'Senior')) ,
-    primary key(id_participation),
+    primary key(dni, id_running),
     foreign key (id_running) references running(id_running),
     foreign key (dni) references competitor(dni)
     );

@@ -51,20 +51,20 @@ INSERT INTO Route VALUES (8, 'Juvenil', 2, 100, 5);
 
 -- Participations --    
 
-INSERT INTO Participation VALUES (1, 3, '01:10:11', 4, '11111111A', 'senior');
+INSERT INTO Participation VALUES (4, '11111111A', 3, '01:10:11', 'senior');
 
-INSERT INTO Participation VALUES (2, 2, '00:10:11', 1, '22222222A', 'juvenil');
+INSERT INTO Participation VALUES (1, '22222222A', 2, '00:10:11', 'juvenil');
 
-INSERT INTO Participation VALUES (3, 15, '02:10:11', 2, '33333333A', 'senior');
-INSERT INTO Participation VALUES (4, 5, '00:50:11', 3, '33333333A', 'senior');
+INSERT INTO Participation VALUES (2, '33333333A', 15, '02:10:11', 'senior');
+INSERT INTO Participation VALUES (3, '33333333A', 5, '00:50:11', 'senior');
 
-INSERT INTO Participation VALUES (5, 1, '00:00:01', 1, '44444444A', 'senior');
-INSERT INTO Participation VALUES (6, 1, '00:00:01', 2, '44444444A', 'senior');
-INSERT INTO Participation VALUES (7, 1, '00:00:01', 3, '44444444A', 'senior');
-INSERT INTO Participation VALUES (8, 1, '00:00:01', 4, '44444444A', 'senior');
-INSERT INTO Participation VALUES (9, 1, '00:00:01', 5, '44444444A', 'senior');
+INSERT INTO Participation VALUES (1, '44444444A', 1, '00:00:01', 'senior');
+INSERT INTO Participation VALUES (2, '44444444A', 1, '00:00:01', 'senior');
+INSERT INTO Participation VALUES (3, '44444444A', 1, '00:00:01', 'senior');
+INSERT INTO Participation VALUES (4, '44444444A', 1, '00:00:01', 'senior');
+INSERT INTO Participation VALUES (5, '44444444A', 1, '00:00:01', 'senior');
 
-INSERT INTO Participation VALUES (10, 6, '01:30:20', 5, '66666666A', 'Childish');
+INSERT INTO Participation VALUES (5, '66666666A', 6, '01:30:20', 'Childish');
 
 -- Sponsor --
 
