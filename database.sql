@@ -18,6 +18,7 @@ create table Running(
     dateRunning date,
     gender CHAR(10) default 'mixed' check (gender in('male','female','mixed')) ,
     location CHAR(50),
+    remainingParticipations INT,
     primary key(id_running));
     
 create table Route(
@@ -63,3 +64,7 @@ create table Participation(
     foreign key (dni) references competitor(dni)
     );
 
+-- Assignmet 3
+
+CREATE INDEX ParticipationIndex ON Participation(time ASC, category);
+CREATE INDEX CompetitorIndex ON Competitor(nationality);

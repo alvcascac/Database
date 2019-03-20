@@ -122,3 +122,35 @@ FROM Participation
 INNER JOIN Competitor 
 ON Competitor.dni=Participation.dni
 WHERE competitor.name='Johnny Depp';
+
+
+
+
+-- ASSIGNMENT 3 --
+
+-- Select participators and there time for a specific running
+CREATE PROCEDURE getTimes (IN runningName CHAR(50))
+SELECT C.name, P.time
+FROM Competitor C, Participation P, Running R
+WHERE C.dni = P.dni and P.id_running = R.id_running and R.name = runningName
+ORDER BY P.time;
+
+CALL getTimes('NY Marathon');
+
+
+-- Select all particpators in a category for a specific running
+CREATE PROCEDURE getParticipators(IN category CHAR(30), IN running CHAR(50))
+SELECT DISTINCT C.name
+FROM Competitor C, Participation P, Running R
+WHERE C.dni = P.dni and P.category = category and P.id_running = R.id_running and R.name = running;
+
+CALL getParticipators('juvenil','St-Sylvester');
+
+-- Transaction
+
+-- A competitor add a participation to a given running
+
+START TRANSACTION;
+INSERT INTO Participation VALUES (4, '77777777A', null, null, 'senior');
+UPDATE Running SET remainingParticipations = remainingParticipations - 1 WHERE id_running = 4;
+COMMIT;
