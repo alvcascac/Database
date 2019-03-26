@@ -1,4 +1,4 @@
-USE assignment2;
+USE dat220_assignment2;
 
 -- BASICS --
 

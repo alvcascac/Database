@@ -1,8 +1,8 @@
-DROP DATABASE IF exists assignment2;
+DROP DATABASE IF exists dat220_assignment2;
 
-CREATE DATABASE IF NOT EXISTS assignment2;
+CREATE DATABASE IF NOT EXISTS dat220_assignment2;
 
-USE assignment2;
+USE dat220_assignment2;
 
 create table Company(
     NIF CHAR(9) not null,

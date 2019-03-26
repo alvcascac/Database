@@ -1,5 +1,5 @@
 SET SQL_SAFE_UPDATES=0;
-USE assignment2;
+USE dat220_assignment2;
 
 -- DROPS --
 
